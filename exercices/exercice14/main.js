@@ -1,15 +1,15 @@
 // Déclaration des variables
 let nbNotes =0, noteMax = 0, noteMin = 20, moyNotes = 0;
 
-// Récupération du nombres de notes saisi par l'utilisateur 
-nbNotes = Number(prompt("Combiens de notes allez vous saisir ? : "));
+// Récupération du nombres de notes saisies par l'utilisateur 
+nbNotes = Number(prompt("Combien de notes allez vous saisir ? : "));
 
 
 for( let i = 1 ; i <= nbNotes; i++) {
     //Récuperation de la saisie pour chaque note
     let noteTmp = Number(prompt(`Merci de saisir la note n°${i} (sur 20) :`));
 
-    // Ajouiter la note à la moyenne
+    // Ajouter la note à la moyenne
      moyNotes += noteTmp;
 
      // Vérification si noteTmp > a noteMax
