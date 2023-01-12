@@ -19,17 +19,41 @@
 // }while(k <= 10)
 
 
-let jourSem = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
+// let jourSem = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
 
-// Itération du tableau par la boucle for
+// // Itération du tableau par la boucle for
 
-for(let i = 0; i< jourSem.length; i++){
-    console.log(jourSem[i]);
-  // if(jourSem[i] == "Lundi"){
-//     if(i == 0){
-//     console.log("Bon début de semaine");
-//    }
-    if(i >= 1 && i <5){
-        console.log("Bon début de semaine");
-    }
+// for(let i = 0; i< jourSem.length; i++){
+//     console.log(jourSem[i]);
+//   // if(jourSem[i] == "Lundi"){
+// //     if(i == 0){
+// //     console.log("Bon début de semaine");
+// //    }
+//     if(i >= 1 && i <5){
+//         console.log("Bon début de semaine");
+//     }
+// }
+
+//Exercice 
+/*
+A partir du tableau suivant :
+let names =["Adam","Etienne","Sebastien","Clement","Virginie"]
+
+1/ Grâce à une boucle for, afficher la liste des prenoms du tableau
+2/ Grâce à une boucle while, afficher la liste des prenoms du tableau
+
+*/
+let names =["Adam","Etienne","Sebastien","Clement","Virginie"];
+
+console.log("Parcour du tableau avec boucle for")
+for(let i = 0; i< names.length; i++){
+    console.log(names[i]);
+}
+
+console.log("Parcour du tableau avec boucle while")
+
+let j =0;
+while(j < names.length) {
+    console.log(names[j]);
+    j++;
 }
