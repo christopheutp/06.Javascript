@@ -43,17 +43,39 @@ let names =["Adam","Etienne","Sebastien","Clement","Virginie"]
 2/ Grâce à une boucle while, afficher la liste des prenoms du tableau
 
 */
-let names =["Adam","Etienne","Sebastien","Clement","Virginie"];
+ let names =["Adam","Etienne","Sebastien","Clement","Virginie"];
 
-console.log("Parcour du tableau avec boucle for")
-for(let i = 0; i< names.length; i++){
-    console.log(names[i]);
-}
+// console.log("Parcour du tableau avec boucle for")
+// for(let i = 0; i< names.length; i++){
+//     console.log(names[i]);
+// }
 
-console.log("Parcour du tableau avec boucle while")
+// console.log("Parcour du tableau avec boucle while")
 
-let j =0;
-while(j < names.length) {
-    console.log(names[j]);
-    j++;
+// let j =0;
+// while(j < names.length) {
+//     console.log(names[j]);
+//     j++;
+// }
+
+// La boucle Pour... dans.....(For... In...)
+
+//Parfait pour les tableaux Associatif
+ let contact = {
+    nom : "Richard",
+    prenom : "Piere",
+    specialite : "Boucle infinie"
+ };// 
+
+// // Exemple de boucle For .. in...
+// for(let key in contact){
+//     console.log(key); //  Affiche la clé du tableau
+//     console.log(contact[key])//Affiche la valeurs
+//     console.log(key + " : "+contact[key]); // Affcihe les pairs de clé + valeurs
+// }
+
+// La boucle For...Of...
+
+for(const value of names){
+     console.log(`La boucle for...of, names contient ${value}`);
 }
