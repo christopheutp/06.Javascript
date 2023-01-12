@@ -23,26 +23,26 @@
 
 // Destucturing
 
-const tabNum = [1,2,3];
-console.table(tabNum);
+// const tabNum = [1,2,3];
+// console.table(tabNum);
 
-// En ES5
-const a = tabNum[0];
-const b = tabNum[1];
+// // En ES5
+// const a = tabNum[0];
+// const b = tabNum[1];
 
-// En ES6 avec le destructuring nous pouvons l'ecrire :
-const [c,e, ...d] = tabNum;
-console.log(c); // 1
-console.log(e);
-console.log(d); // 
+// // En ES6 avec le destructuring nous pouvons l'ecrire :
+// const [c,e, ...d] = tabNum;
+// console.log(c); // 1
+// console.log(e);
+// console.log(d); // 
 
 
-let legumes = ["Carottes","Choux","Haricots"];
-let fruits = ["Raisin","Bananes","Abricots"];
+// let legumes = ["Carottes","Choux","Haricots"];
+// let fruits = ["Raisin","Bananes","Abricots"];
 
-let aliments = [...legumes,"Patate",...fruits,"Cerises"];
+// let aliments = [...legumes,"Patate",...fruits,"Cerises"];
 
-console.table(aliments);
+// console.table(aliments);
 
 // Même principe avec les objets
 
@@ -52,11 +52,15 @@ const personne = {
     specialite : "Boucle infinie"
 }
 
-const {specialite, ...person} = personne;
-// person va assigner le "rest" des key non utilisé
-console.log(specialite);
-console.log(person);
+// const {specialite, ...person} = personne;
+// // person va assigner le "rest" des key non utilisé
+// console.log(specialite);
+// console.log(person);
 
-const {nom, prenom} = personne;
-console.log(nom);
-console.log(prenom);
+// const {nom, prenom} = personne;
+// console.log(nom);
+// console.log(prenom);
+
+const personneAvecAge = {...personne, age : 25}
+
+console.table(personneAvecAge);
