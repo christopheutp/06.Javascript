@@ -5,6 +5,19 @@ console.log("les Structures Conditionnelles");
 
 // L'instruction if ( Si.... Alors) else (Sinon...)
 
+/**
+ * L'instruction If ( Si... Alors..) Else (Sinon...)
+ * 
+ * if (Condition)
+ * {
+ *  // Si la condition est vrai => Code à Executer 
+ * } 
+ * else
+ * {
+ * // Si la condition est fausse => Code à Executer
+ * }
+ */
+
 let compte = 1500;
 
 // Avec plusieurs vérifications
@@ -50,7 +63,47 @@ else {
     console.log("Vous êtes un ado")
 }
 
+
+/**
+ * Les Differents opérateur de comparaison
+ * 
+ * == signifie est égal à // Permet de vérifier si deux valeurs sont identiques
+ * 
+ * === signifie est strictement égal à // Permet de vérifier si deux valeurs et types sont identiques
+ * 
+ * != signifie est différent de // Permet de vérifier si deux valeurs sont differentes
+ * 
+ * !== signifie est strictement différent de // Permet de vérifier si deux valeurs sont differentes
+ */
+
+console.log(1 == 1); // vrai
+console.log("1" == 1); // vrai
+console.log(1 === 1); // vrai
+console.log("1" === 1); // faux
+console.log("1" != 1); // faux
+console.log(3 !== 3); // faux
+console.log(4 !== 3); // vrai
+
 // SWITCH CASE
+
+/**
+ * SWITCH CASE
+ * 
+ * switch(condition){
+ *      case valeur1 :
+ *          // Instruction à executer si ce cas est vrai;
+ *          break;
+ *      case valeur2 :
+ *          // Instruction à executer si ce cas est vrai;
+ *          break;
+ *      case valeurN :
+ *          // Instruction à executer si ce cas est vrai;
+ *          break;
+ *      default:
+ *          // Instruction à executer si ce cas est vrai;
+ *          break;  
+ * };
+ */
 
 const civilite = "rien";
 switch (civilite) {

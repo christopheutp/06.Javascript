@@ -1,16 +1,35 @@
 //  Les Boucles Itératives
 
+
+/**
+ * Boucle Pour... (For...)
+ * 
+ * for(initialisation variable itération ; condition de rebouclage ; Pas incrémentation)
+ * {
+ *     // Instructions executée à chaque itération
+ * }
+ */
 //let i ;
 // for (let i = 1 ;i <= 10 ; i++) {
 //     console.log(`La boucle for s'est executée ${i} fois`)
 // }
 
+
+
+/**
+ * La Boucle Tant que... (While)
+ */
 // let j =11;
 // while(j <= 10) {
 //     console.log(`La boucle while s'est executée ${j} fois`);
 //     j++;
 // }
 
+
+
+/**
+ * La Boucle Faire Tant que... (Do...While...)
+ */
 // let k = 11;
 
 // do {
@@ -33,6 +52,32 @@
 //         console.log("Bon début de semaine");
 //     }
 // }
+
+/**
+ * Instructions Break... Continue...
+ */
+
+
+
+console.log("Instructions Break... Continue");
+
+var jourSem = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+
+// Itération du tableau numerique par la boucle for
+
+for (var j = 0; j < jourSem.length; j++) {
+    //if (j === 0) {
+    if (j >= 1 && j < 4) {
+        console.log("Début de la semaine");
+        continue;
+    }
+    console.log(jourSem[j]);
+    if (j === 4)
+        break;
+}
+
+
+
 
 //Exercice 
 /*

@@ -69,10 +69,11 @@ let test = function() {
     return "Toto";
 }
 
-test = () => {
+test = () => {  // utilisation du fat arrow =>
     return "Toto";
 }
 
+// Simplification seulement si la fonction ne fait qu'un return
 test = () => "Toto";
 console.log(test());
 
@@ -92,6 +93,7 @@ test2 = (vegetable) => {
     return vegetable.name;
 }
 
+// Simplification seulement si la fonction ne fait qu'un return
 test2 = (vegetable) => vegetable.name;
 
 
@@ -119,4 +121,15 @@ let personne = {
 }
 
 console.log(test3(personne.nom,personne.prenom));
+
+
+
+ // Valeurs par défaut pour les paramètres d'une fonction
+
+function Carre(nb = 10) {
+    return nb * nb;
+}
+
+console.log(Carre(5)); // 25
+console.log("Default params : " + Carre()); // 100
 
