@@ -16,8 +16,8 @@ let chaine = "Bonjour, comment allez-vous?",
  */
 
 console.log(chaine.charAt(2)); // n
-console.log(chaine.charCodeAt(2));
-console.log(chaine[0]);
+console.log(chaine.charCodeAt(8));
+console.log(chaine[4]);
 
 /**
  * concat()
@@ -29,13 +29,13 @@ console.log(String.prototype.concat(str1, str2, str3));
  * includes()
  */
 
-console.log(chaine.includes(','));
+console.log(chaine.includes('y'));
 
 /**
  * endsWith()
  */
 
-console.log(chaine.endsWith('?'));
+console.log(chaine.endsWith('e'));
 
 /**
 * indexOf()
