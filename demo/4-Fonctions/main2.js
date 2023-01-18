@@ -150,5 +150,27 @@ console.log(getFullName(user));
 
 console.log("-----------------rest Operator----------------- ");
 
-let haricot = 
+//let haricot = vegetable[3]; // crée une réference au tableau n'est pas une vrai copie
+
+let haricot = {...vegetable[3]}; // une vraie copie car on vient de recréer le tableau associatif (objet) et donc dans ce cas pas de référence
+
+console.log(haricot);
+console.log(vegetable[3]);
+console.table(vegetable);
+
+haricot.price = 2.99;
+
+console.log(haricot);
+console.log(vegetable[3]); // haricot a modifié le tableau (dans mon premier exemple) car c'est une réference au tableau
+console.table(vegetable);
+
+
+
+const tabNum2 = [1,2,3];
+
+const [d,...e] = tabNum2;
+
+console.log(d);
+console.log(e);
+
 
