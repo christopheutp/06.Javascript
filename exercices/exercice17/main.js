@@ -52,6 +52,7 @@ btn.addEventListener("click", () => {
         age : dogAge
     })
     console.table(myDogs);
+
     refreshDogSelect();
     output.textContent="";
 })
