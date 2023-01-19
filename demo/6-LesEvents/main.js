@@ -36,3 +36,9 @@ console.log(touches);
 const listKeyCode = touches.map(touche => touche.dataset.name);
 console.log(listKeyCode);
 
+
+const btnvalider = document.querySelector('#btnValider');
+const result = document.querySelector('#result');
+
+
+console.log(document.getElementById("choix1").checked);
