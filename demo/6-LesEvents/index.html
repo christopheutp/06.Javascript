@@ -19,7 +19,36 @@
             <p class="lead">Création et Utilisation des <mark>Events</mark> en <mark>Javascript</mark></p>
         </div>
         <div class="container">
-    </body>
+            <div class="jumbotron">
+                <h4>Apppel de fonction à l'event click d'un bouton</h4>
+                <button class="btn btn-success" onclick="myButtonClick()">Cliquez ici</button>
+            </div>
+
+            <div class="jumbotron">
+                <h4>Gestion des events boutons</h4>
+                <button class="btn btn-primary" onmouseover="myMouseOver()">onMouseOver</button>
+                <button class="btn btn-secondary" ondblclick="myDblClick()">Double Click</button>
+            </div>
+
+            <div class="jumbotron">
+                <h4>Gestion des appels de fonctions avec argument</h4>
+                <button class="btn btn-primary" onclick="myFunctionAlert(1)">Bouton 1</button>
+                <button class="btn btn-secondary" onmouseover="myFunctionAlert(2)">Bouton 2</button>
+                <button class="btn btn-danger" ondblclick="myFunctionAlert(3)">Bouton 3</button>
+                <button class="btn btn-warning" onmouseout="myFunctionAlert(4)">Bouton 4</button>
+                <button class="btn btn-warning" onmouseleave="myFunctionAlert(5)">Bouton 5</button>
+            </div>
+
+            <div class="jumbotron">
+                <h4>Gestion des events avec récupération data-key</h4>
+                <button data-name="1" class="bouton btn btn-secondary">1</button>
+                <button data-name="2" class="bouton btn btn-secondary">2</button>
+                <button data-name="3" class="bouton btn btn-secondary">3</button>
+            </div>
+
+
+        </div>  
+    </body>  
 
 
     <!-- Bootstrap Bundle with Popper -->
