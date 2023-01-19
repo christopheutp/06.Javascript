@@ -14,7 +14,7 @@ let nbNotes = 0,
 nbNotes = Number(prompt("Combiens de notes allez vous saisir ?"));
 
 // Affichage de la saisi de l'utilisateur
-affichage += `<p>La série contiend <b>${nbNotes} notes</b> : </p><ul>`;
+affichage += `<p>La série contient <b>${nbNotes} notes</b> : </p><ul>`;
 
 // Boucle pour saisie et traiement des notes
 for (let i = 1; i <= nbNotes; i++) {
