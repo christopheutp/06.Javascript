@@ -64,13 +64,19 @@ openButton.addEventListener('click', () => {
 // })
 
 
-document.addEventListener("keydown", (e) => {
-    console.log(e.key)
-    alert(e.which);
-    if(e.key === "Escape") {
-        myWindow.classList.remove("hidden");
-    }
-})
+// document.addEventListener("keydown", (e) => {
+//     console.log(e.key)
+//     alert(e.which);
+//     if(e.key === "Escape") {
+//         myWindow.classList.remove("hidden");
+//     }
+// })
+
+const select = document.getElementById("my-select");
+
+select.addEventListener("change", () => {
+    console.log(select.value);
+});
 
 
 
