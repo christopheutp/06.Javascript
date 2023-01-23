@@ -12,15 +12,12 @@ document.addEventListener('keydown',(e) => {
     calculer(valeur);
 });
 
-
-
 //Ecouteur évenement click
 document.addEventListener('click',(e) => {
   //  console.log(e.target.dataset.key);
     const valeur = e.target.dataset.key;
     calculer(valeur);
 });
-
 
 // Fonction permettant d'effectuer les actions des touches
 const calculer = (valeur) => {
@@ -42,7 +39,7 @@ const calculer = (valeur) => {
              //   console.log("opération en cours");
                 const indexKeycode = listKeycode.indexOf(valeur);
                 const touche = touches[indexKeycode];
-                console.log(touche);
+             //   console.log(touche);
                 ecranHaut.textContent += touche.innerHTML;
                // ecranBas.textContent = touche.textContent;
                 ecranBas.textContent = touche.innerHTML;
@@ -51,3 +48,7 @@ const calculer = (valeur) => {
         }
 
 }
+
+window.addEventListener('resize', () => {
+    console.log("Largeur :"+window.innerWidth+" hauteur : "+window.innerHeight);
+});
