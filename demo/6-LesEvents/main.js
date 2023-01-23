@@ -1,4 +1,5 @@
 // Les events en javascript
+console.log("coucou")
 
 
 function myButtonClick(){
@@ -85,6 +86,17 @@ const result = document.querySelector('#result');
 
 console.log(document.getElementById("choix1").checked);
 
-btnvalider.onclick = () => {
+const monInput = document.getElementById("moninput");
+const monForm = document.getElementById("monform");
+// btnvalider.onclick = (e) => {
+//     e.preventDefault();
+//     radioButton();
+//    // monInput.value ="";
+//    monForm.reset();
+// }
+
+
+monForm.addEventListener('submit', (e) => {
     radioButton();
-}
+    e.preventDefault();
+})
