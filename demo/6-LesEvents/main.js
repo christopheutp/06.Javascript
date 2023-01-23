@@ -34,8 +34,29 @@ function myFunctionAlert(arg){
 function radioButton () {
   //  console.log("clique sur le bouton");
      //1ere solution avec document.querySelector('input[name=choix]:checked').value
-     let affichage= "<ul><li> 1ere solution : "+document.querySelector('input[name=choix]:checked').value + "</li></ul>";
+     let affichage= "<ul><li> 1ere solution : "+document.querySelector('input[name=choix]:checked').value + "</li>";
      console.log(document.querySelector('input[name=choix]:checked').value);
+
+     // 2eme solution avec getElementByName
+     const boutons = document.getElementsByName('choix');
+     console.log(boutons);
+
+     for(let i = 0;i<boutons.length;i++){
+        if(boutons[i].checked) {
+            affichage += "<li> 2eme solution (boucle for) "+boutons[i].value + "</li>"
+        }
+     }
+
+     for(const button of boutons){
+            console.log(button);
+            if(button.checked){
+                affichage += "<li> 3eme solution (for .... of ) "+button.value + "</li></ul>"
+            }
+            
+     }
+
+
+
  
  
      result.innerHTML = affichage;
