@@ -50,9 +50,18 @@ function radioButton () {
      for(const button of boutons){
             console.log(button);
             if(button.checked){
-                affichage += "<li> 3eme solution (for .... of ) "+button.value + "</li></ul>"
+                affichage += "<li> 3eme solution (for .... of ) "+button.value + "</li>"
             }
             
+     }
+
+     // 4eme solution avec l'id
+     if(document.getElementById('choix1').checked){
+        affichage += "<li> 4eme solution : "+document.getElementById('choix1').value + "</li></ul>"
+     }else if(document.getElementById('choix2').checked){
+        affichage += "<li> 4eme solution : "+document.getElementById('choix2').value + "</li></ul>"
+     }else if(document.getElementById('choix3').checked){
+        affichage += "<li> 4eme solution : "+document.getElementById('choix3').value + "</li></ul>"
      }
 
 
