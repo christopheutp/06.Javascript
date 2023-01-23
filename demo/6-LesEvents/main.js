@@ -35,6 +35,7 @@ function myFunctionAlert(arg){
 function radioButton () {
   //  console.log("clique sur le bouton");
      //1ere solution avec document.querySelector('input[name=choix]:checked').value
+     console.log(document.querySelectorAll('input[name=choix]'));
      let affichage= "<ul><li> 1ere solution : "+document.querySelector('input[name=choix]:checked').value + "</li>";
      console.log(document.querySelector('input[name=choix]:checked').value);
 
