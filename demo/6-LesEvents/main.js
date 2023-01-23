@@ -3,6 +3,7 @@
 
 function myButtonClick(){
     alert("Vous avez cliqué sur le bouton");
+   
 }
 
 
@@ -30,6 +31,17 @@ function myFunctionAlert(arg){
     }
 }
 
+function radioButton () {
+  //  console.log("clique sur le bouton");
+     //1ere solution avec document.querySelector('input[name=choix]:checked').value
+     let affichage= "<ul><li> 1ere solution : "+document.querySelector('input[name=choix]:checked').value + "</li></ul>";
+     console.log(document.querySelector('input[name=choix]:checked').value);
+ 
+ 
+     result.innerHTML = affichage;
+
+}
+
 
 const touches = [...document.querySelectorAll('.bouton')];
 console.log(touches);
@@ -42,3 +54,7 @@ const result = document.querySelector('#result');
 
 
 console.log(document.getElementById("choix1").checked);
+
+btnvalider.onclick = () => {
+    radioButton();
+}
