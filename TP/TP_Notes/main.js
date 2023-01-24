@@ -10,6 +10,27 @@ const addGradeForm = document.querySelector("#add-grade-form");
 
 //let bool = true;
 
+let students = [
+    {
+        lastname : "MARTIN",
+        firstname : "John",
+        grades : {
+            'français' : [12,14,9],
+            'mathématiques' : [8,7,12,15]
+        }
+    },
+    {
+        lastname : "DUPONT",
+        firstname : "Sophie",
+        grades : {
+            'français' : [18,17,15],
+            'mathématiques' : [4,5,12,15]
+        }
+    }
+]
+
+let lessonFields = ['français','mathématiques'];
+
 addStudentToogleButton.addEventListener("click", () => {
     console.log("clique bouton etudiant")
    // if(bool){
