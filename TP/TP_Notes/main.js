@@ -67,7 +67,10 @@ document.getElementById("btnajoutnote").addEventListener("click", () => {
    console.log(lessonFieldName);
   // console.log(lessonFields[lessonFieldName-1]);
     let mat = lessonFields[lessonFieldName-1];
-  
+
+    if(!student.grades) student.grades = {};
+    if(!student.grades[mat]) student.grades[mat] = [];
+    
    
    student.grades[mat].push(grade);
    console.log(student.grades[mat]);
