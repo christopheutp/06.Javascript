@@ -65,10 +65,12 @@ document.getElementById("btnajoutnote").addEventListener("click", () => {
    console.log(student);
    const lessonFieldName = document.querySelector('#grade-field').value;
    console.log(lessonFieldName);
-   console.log(lessonFields[lessonFieldName-1]);
-    
-   console.log(student.grades[lessonFieldName])
-
+  // console.log(lessonFields[lessonFieldName-1]);
+    let mat = lessonFields[lessonFieldName-1];
+  
+   
+   student.grades[mat].push(grade);
+   console.log(student.grades[mat]);
 })
 
 
@@ -134,6 +136,25 @@ lessonFields.forEach(lesson => {
     lessonfieldChoiceForm.innerHTML += `<option value="${lessonFields.indexOf(lesson)+1}">${capitalize(lesson)}</option>`
     lessonFieldChoiceSelect.innerHTML += `<option value="${lessonFields.indexOf(lesson)+1}">${capitalize(lesson)}</option>`
 })
+
+}
+
+const tableDatas = document.querySelector('#table-data');
+
+const refreshTableElement = () => {
+    console.log("refresh table");
+    tableDatas.innerHTML="";
+
+    if() {
+        console.log("cas Toute la classe et toutes les matiéres")
+    }else if(){
+        console.log("aucune matiére ")
+    }else if(){
+        console.log("aucun étudiant")
+    }else {
+        console.log("un étudiant et une matiére")
+    }
+
 
 }
 
