@@ -8,6 +8,11 @@ const addStudentForm = document.querySelector("#add-student-form");
 const addLessonFieldForm = document.querySelector("#add-lessonfield-form");
 const addGradeForm = document.querySelector("#add-grade-form");
 
+const studentChoiceForm = document.querySelector('#grade-student');
+const lessonfieldChoiceForm = document.querySelector('#grade-field');
+const studentChoiceSelect = document.querySelector('#student-choice');
+const lessonFieldChoiceSelect = document.querySelector('#lessonfield-choice');
+
 
 
 //let bool = true;
@@ -31,7 +36,45 @@ let students = [
     }
 ]
 
-let lessonFields = ['français','mathématiques'];
+let lessonFields = ['françAIs','mathématiques'];
+
+document.getElementById("btnajoutstudent").addEventListener("click", () => {
+    console.log("ajout student");
+    const newStudent = {
+        lastname : document.querySelector("#student-lastname").value,
+        firstname : document.querySelector("#student-firstname").value
+    };
+
+    students.push(newStudent);
+
+    refreshSelectElements();
+})
+
+document.getElementById("btnajoutmatiere").addEventListener("click", () => {
+    console.log("ajout matiere");
+    const newLessonField = document.querySelector("#lesson-field").value.toLowerCase();
+    lessonFields.push(newLessonField);
+    refreshSelectElements();
+})
+
+document.getElementById("btnajoutnote").addEventListener("click", () => {
+    console.log("ajout note");
+    const grade = Number(document.querySelector('#grade').value);
+    console.log(grade);
+   const student = students[(document.querySelector("#grade-student").value)-1];
+   console.log(student);
+   const lessonFieldName = document.querySelector('#grade-field').value;
+   console.log(lessonFieldName);
+   console.log(lessonFields[lessonFieldName-1]);
+    
+   console.log(student.grades[lessonFields[lessonFieldName-1]])
+
+})
+
+
+
+
+
 
 addStudentToogleButton.addEventListener("click", () => {
     console.log("clique bouton etudiant")
@@ -70,16 +113,27 @@ addGradeToogleButton.addEventListener("click", () => {
     }
 });
 
-const studentChoiceForm = document.querySelector('#grade-student');
-const lessonfieldChoiceForm = document.querySelector('#grade-field');
-const studentChoiceSelect = document.querySelector('#student-choice');
-const lessonFieldChoiceSelect = document.querySelector('#lessonfield-choice');
+
+
+const capitalize = (value) => {
+    value = value.toLowerCase(); 
+    return value.replace(value[0],value[0].toUpperCase());
+}
 
 const refreshSelectElements = () => {
 studentChoiceForm.innerHTML =`<option value='0'>Sélectionnez un éléve </option>`;
+studentChoiceSelect.innerHTML =`<option value='0'>Toute la classe </option>`;
 students.forEach(student => {
     studentChoiceForm.innerHTML += `<option value='${students.indexOf(student)+1}'>${student.lastname} ${student.firstname}</option>`;
+    studentChoiceSelect.innerHTML += `<option value='${students.indexOf(student)+1}'>${student.lastname} ${student.firstname}</option>`;
 });
+
+lessonfieldChoiceForm.innerHTML= `<option value='0'>Sélectionnez une matière </option>`;
+lessonFieldChoiceSelect.innerHTML= `<option value='0'>Toutes les matières </option>`;
+lessonFields.forEach(lesson => {
+    lessonfieldChoiceForm.innerHTML += `<option value="${lessonFields.indexOf(lesson)+1}">${capitalize(lesson)}</option>`
+    lessonFieldChoiceSelect.innerHTML += `<option value="${lessonFields.indexOf(lesson)+1}">${capitalize(lesson)}</option>`
+})
 
 }
 
