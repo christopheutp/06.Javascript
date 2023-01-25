@@ -143,11 +143,39 @@ const tableDatas = document.querySelector('#table-data');
 
 studentChoiceSelect.addEventListener("change", () => {
     refreshTableElement();
+    refreshAverageGrade();
 });
 
 lessonFieldChoiceSelect.addEventListener("change", () => {
     refreshTableElement();
+    refreshAverageGrade();
 });
+
+const averageGradeOutput = document.getElementById('average-grade');
+
+const refreshAverageGrade = () => {
+    console.log("refresh grade");
+    tableDatas.innerHTML="";
+
+    if(studentChoiceSelect.value == 0 && lessonFieldChoiceSelect.value == 0) {
+        console.log("cas Toute la classe et toutes les matiéres")
+        
+       
+    }else if(lessonFieldChoiceSelect.value == 0 ){
+        console.log("aucune matiére ")
+       
+      
+    }else if(studentChoiceSelect.value == 0){
+        console.log("aucun étudiant")
+        
+
+    }else {
+        console.log("un étudiant et une matiére");
+        
+    }
+
+
+}
 
 const refreshTableElement = () => {
     console.log("refresh table");
