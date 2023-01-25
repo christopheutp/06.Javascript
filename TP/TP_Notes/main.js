@@ -36,7 +36,7 @@ let students = [
     }
 ]
 
-let lessonFields = ['françAIs','mathématiques'];
+let lessonFields = ['français','mathématiques'];
 
 document.getElementById("btnajoutstudent").addEventListener("click", () => {
     console.log("ajout student");
@@ -67,7 +67,7 @@ document.getElementById("btnajoutnote").addEventListener("click", () => {
    console.log(lessonFieldName);
    console.log(lessonFields[lessonFieldName-1]);
     
-   console.log(student.grades[lessonFields[lessonFieldName-1]])
+   console.log(student.grades[lessonFieldName])
 
 })
 
