@@ -145,11 +145,11 @@ const refreshTableElement = () => {
     console.log("refresh table");
     tableDatas.innerHTML="";
 
-    if() {
+    if(studentChoiceSelect.value == 0 && lessonFieldChoiceSelect.value == 0) {
         console.log("cas Toute la classe et toutes les matiéres")
-    }else if(){
+    }else if(lessonFieldChoiceSelect.value == 0 ){
         console.log("aucune matiére ")
-    }else if(){
+    }else if(studentChoiceSelect.value == 0){
         console.log("aucun étudiant")
     }else {
         console.log("un étudiant et une matiére")
