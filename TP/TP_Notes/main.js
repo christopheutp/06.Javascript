@@ -74,6 +74,7 @@ document.getElementById("btnajoutnote").addEventListener("click", () => {
    
    student.grades[mat].push(grade);
    console.log(student.grades[mat]);
+   console.log(student);
 })
 
 
