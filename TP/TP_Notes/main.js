@@ -193,7 +193,7 @@ const refreshAverageGrade = () => {
         for (const student of students){
             for(const grade of student.grades[mat]){
                 currentGrades.push(grade);
-                averageGradeOutput.innerHTML = `Moyenne en <b>${lessonfield}</b> de la classe : <b>${calculateAverage(currentGrades)}</b>`  
+                averageGradeOutput.innerHTML = `Moyenne en <b>${mat}</b> de la classe : <b>${calculateAverage(currentGrades)}</b>`  
         }
         }
         
@@ -206,7 +206,7 @@ const refreshAverageGrade = () => {
 
         for(const grade of student.grades[mat]) {
             currentGrades.push(grade);
-            averageGradeOutput.innerHTML = `Moyenne en <b>${lessonfield}</b> de <b>${student.lastname} ${student.firstname}</b> : <b>${calculateAverage(currentGrades)}</b>`  
+            averageGradeOutput.innerHTML = `Moyenne en <b>${mat}</b> de <b>${student.lastname} ${student.firstname}</b> : <b>${calculateAverage(currentGrades)}</b>`  
         }
         
     }
