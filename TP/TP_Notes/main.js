@@ -155,26 +155,68 @@ const refreshTableElement = () => {
 
     if(studentChoiceSelect.value == 0 && lessonFieldChoiceSelect.value == 0) {
         console.log("cas Toute la classe et toutes les matiéres")
-        for (let student of students){
-            for(const lessonfield of student.grades){
-                for(const grade of student.grades[lessonfield]){
+        for (const student of students){
+            for(const lessonfield in student.grades){
+                 for(const grade of student.grades[lessonfield]){
                         tableDatas.innerHTML += 
-                        `<tr>
-                            <td>${student.lastname}</td>
-                            <td>${student.firstname}</td>
-                            <td>${lessonfield}</td>
+                         `<tr>
+                             <td>${student.lastname}</td>
+                             <td>${student.firstname}</td>
+                           <td>${lessonfield}</td>
                             <td>${grade}</td>
-                        </tr>
+                      </tr>
                         `
                 }
             }
         }
     }else if(lessonFieldChoiceSelect.value == 0 ){
         console.log("aucune matiére ")
+        const student = students[studentChoiceSelect.value-1]
+
+        for(const lessonfield in student.grades){
+            for(const grade of student.grades[lessonfield]){
+                tableDatas.innerHTML += 
+                 `<tr>
+                     <td>${student.lastname}</td>
+                     <td>${student.firstname}</td>
+                   <td>${lessonfield}</td>
+                    <td>${grade}</td>
+              </tr>
+                `
+        }
+        }
     }else if(studentChoiceSelect.value == 0){
         console.log("aucun étudiant")
+        const lessonfield = lessonFieldChoiceSelect.value;
+        let mat = lessonFields[lessonfield-1];
+        for (const student of students){
+            for(const grade of student.grades[mat]){
+                tableDatas.innerHTML += 
+                 `<tr>
+                     <td>${student.lastname}</td>
+                     <td>${student.firstname}</td>
+                   <td>${lessonfield}</td>
+                    <td>${grade}</td>
+              </tr>
+                `
+        }
+        }
+
     }else {
-        console.log("un étudiant et une matiére")
+        console.log("un étudiant et une matiére");
+        const student = students[studentChoiceSelect.value-1];
+        const lessonfield = lessonFieldChoiceSelect.value;
+        let mat = lessonFields[lessonfield-1];
+
+        for(const grade of student.grades[mat]) {
+            `<tr>
+                     <td>${student.lastname}</td>
+                     <td>${student.firstname}</td>
+                   <td>${lessonfield}</td>
+                    <td>${grade}</td>
+              </tr>
+              `           
+        }
     }
 
 
