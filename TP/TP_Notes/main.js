@@ -155,6 +155,20 @@ const refreshTableElement = () => {
 
     if(studentChoiceSelect.value == 0 && lessonFieldChoiceSelect.value == 0) {
         console.log("cas Toute la classe et toutes les matiéres")
+        for (let student of students){
+            for(const lessonfield of student.grades){
+                for(const grade of student.grades[lessonfield]){
+                        tableDatas.innerHTML += 
+                        `<tr>
+                            <td>${student.lastname}</td>
+                            <td>${student.firstname}</td>
+                            <td>${lessonfield}</td>
+                            <td>${grade}</td>
+                        </tr>
+                        `
+                }
+            }
+        }
     }else if(lessonFieldChoiceSelect.value == 0 ){
         console.log("aucune matiére ")
     }else if(studentChoiceSelect.value == 0){
