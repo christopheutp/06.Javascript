@@ -195,7 +195,7 @@ const refreshTableElement = () => {
                  `<tr>
                      <td>${student.lastname}</td>
                      <td>${student.firstname}</td>
-                   <td>${lessonfield}</td>
+                   <td>${mat}</td>
                     <td>${grade}</td>
               </tr>
                 `
@@ -213,7 +213,7 @@ const refreshTableElement = () => {
             `<tr>
                      <td>${student.lastname}</td>
                      <td>${student.firstname}</td>
-                   <td>${lessonfield}</td>
+                   <td>${mat}</td>
                     <td>${grade}</td>
               </tr>
               `           
