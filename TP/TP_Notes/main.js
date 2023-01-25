@@ -177,14 +177,37 @@ const refreshAverageGrade = () => {
        
     }else if(lessonFieldChoiceSelect.value == 0 ){
         console.log("aucune matiére ")
+        const student = students[studentChoiceSelect.value-1]
+
+        for(const lessonfield in student.grades){
+            for(const grade of student.grades[lessonfield]){
+                currentGrades.push(grade);
+                averageGradeOutput.innerHTML = `Moyenne générale de <b>${student.lastname} ${student.firstname}</b>  : <b>${calculateAverage(currentGrades)}</b>`  
+        }
        
-      
+    } 
     }else if(studentChoiceSelect.value == 0){
         console.log("aucun étudiant")
+        const lessonfield = lessonFieldChoiceSelect.value;
+        let mat = lessonFields[lessonfield-1];
+        for (const student of students){
+            for(const grade of student.grades[mat]){
+                currentGrades.push(grade);
+                averageGradeOutput.innerHTML = `Moyenne en <b>${lessonfield}</b> de la classe : <b>${calculateAverage(currentGrades)}</b>`  
+        }
+        }
         
 
     }else {
         console.log("un étudiant et une matiére");
+        const student = students[studentChoiceSelect.value-1];
+        const lessonfield = lessonFieldChoiceSelect.value;
+        let mat = lessonFields[lessonfield-1];
+
+        for(const grade of student.grades[mat]) {
+            currentGrades.push(grade);
+            averageGradeOutput.innerHTML = `Moyenne en <b>${lessonfield}</b> de <b>${student.lastname} ${student.firstname}</b> : <b>${calculateAverage(currentGrades)}</b>`  
+        }
         
     }
 
