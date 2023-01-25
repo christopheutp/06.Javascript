@@ -209,6 +209,7 @@ const refreshTableElement = () => {
         let mat = lessonFields[lessonfield-1];
 
         for(const grade of student.grades[mat]) {
+            tableDatas.innerHTML += 
             `<tr>
                      <td>${student.lastname}</td>
                      <td>${student.firstname}</td>
