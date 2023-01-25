@@ -137,9 +137,17 @@ lessonFields.forEach(lesson => {
     lessonFieldChoiceSelect.innerHTML += `<option value="${lessonFields.indexOf(lesson)+1}">${capitalize(lesson)}</option>`
 })
 
-}
+};
 
 const tableDatas = document.querySelector('#table-data');
+
+studentChoiceSelect.addEventListener("change", () => {
+    refreshTableElement();
+});
+
+lessonFieldChoiceSelect.addEventListener("change", () => {
+    refreshTableElement();
+});
 
 const refreshTableElement = () => {
     console.log("refresh table");
@@ -156,6 +164,6 @@ const refreshTableElement = () => {
     }
 
 
-}
+};
 
 refreshSelectElements();
