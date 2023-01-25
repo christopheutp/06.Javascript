@@ -8,6 +8,8 @@ const addStudentForm = document.querySelector("#add-student-form");
 const addLessonFieldForm = document.querySelector("#add-lessonfield-form");
 const addGradeForm = document.querySelector("#add-grade-form");
 
+
+
 //let bool = true;
 
 let students = [
@@ -67,3 +69,18 @@ addGradeToogleButton.addEventListener("click", () => {
         addGradeToogleButton.textContent = "OFF";
     }
 });
+
+const studentChoiceForm = document.querySelector('#grade-student');
+const lessonfieldChoiceForm = document.querySelector('#grade-field');
+const studentChoiceSelect = document.querySelector('#student-choice');
+const lessonFieldChoiceSelect = document.querySelector('#lessonfield-choice');
+
+const refreshSelectElements = () => {
+studentChoiceForm.innerHTML =`<option value='0'>Sélectionnez un éléve </option>`;
+students.forEach(student => {
+    studentChoiceForm.innerHTML += `<option value='${students.indexOf(student)+1}'>${student.lastname} ${student.firstname}</option>`;
+});
+
+}
+
+refreshSelectElements();
