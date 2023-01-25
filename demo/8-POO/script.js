@@ -1,3 +1,6 @@
+import { Contact } from "./classes/contact.js";
+
+
 console.warn("Démo THIS");
 
 const car = {
@@ -8,20 +11,20 @@ const car = {
     }
 }
 
-console.warn("This dans une fonction (fonction ())");
-console.log(car.fullName());
+// console.warn("This dans une fonction (fonction ())");
+// console.log(car.fullName());
 
 
-const carArrow = {
-    model: "Fiesta",
-    manufacturer: "Ford",
-    fullName: () => {
-        return `${this.manufacturer} ${this.model}`
-    }
-}
+// const carArrow = {
+//     model: "Fiesta",
+//     manufacturer: "Ford",
+//     fullName: () => {
+//         return `${this.manufacturer} ${this.model}`
+//     }
+// }
 
-console.warn("This dans une fonction Arrow (() => )");
-console.log(carArrow.fullName());
+// console.warn("This dans une fonction Arrow (() => )");
+// console.log(carArrow.fullName());
 
 console.warn("THIS avec les élements du DOM");
 
@@ -38,6 +41,50 @@ link.addEventListener('click', function () {
     console.warn("This dans une fonction (fonction ())");
     console.log(this);
 })
+
+console.warn("Déstructuration d'objets");
+const person = {  
+    firstName: 'Tom',  
+    lastName: 'Cruise',  
+    actor: true,
+    age: 54 
+}
+
+const { firstName, age } = person //name: Tom, age: 54
+console.log(firstName);
+
+//const { firstName: names, age } = person //name: Tom, age: 54
+
+//console.log(names);
+console.log(age);
+
+console.warn("Ma premiére Class");
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    hello() {
+        return "Salut je m'appelle " + this.name + '.'
+
+    }
+
+}
+
+const pierre = new Person("Pierre");
+const cassandre = new Person("Cassandre");
+
+console.log(pierre.hello());
+console.log(cassandre.hello());
+
+
+let monContact = new Contact();
+monContact.nom = "Alexandre";
+
+monContact.afficher();
+
+
 
 
 
