@@ -153,12 +153,26 @@ lessonFieldChoiceSelect.addEventListener("change", () => {
 
 const averageGradeOutput = document.getElementById('average-grade');
 
+const calculateAverage = (grades) => {
+    let sum =0;
+    for(const grade of grades) sum += grade;
+    return (sum / grades.length).toFixed(1);
+}
+
 const refreshAverageGrade = () => {
     console.log("refresh grade");
-    tableDatas.innerHTML="";
+    let currentGrades = [];
 
     if(studentChoiceSelect.value == 0 && lessonFieldChoiceSelect.value == 0) {
         console.log("cas Toute la classe et toutes les matiéres")
+        for(const student of students){
+            for (const lessonfield in student.grades){
+                for(const grade of student.grades[lessonfield]){
+                    currentGrades.push(grade);
+                    averageGradeOutput.innerHTML = `Moyenne générale de la classe : <b>${calculateAverage(currentGrades)}</b>`
+                }
+            }
+        }
         
        
     }else if(lessonFieldChoiceSelect.value == 0 ){
