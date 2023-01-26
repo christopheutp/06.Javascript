@@ -33,7 +33,7 @@ link.addEventListener('click', () => {
     // this === window
     console.warn("This dans une fonction Arrow (() => )");
     console.log(this);
-    
+
 })
 
 link.addEventListener('click', function () {
@@ -43,11 +43,11 @@ link.addEventListener('click', function () {
 })
 
 console.warn("Déstructuration d'objets");
-const person = {  
-    firstName: 'Tom',  
-    lastName: 'Cruise',  
+const person = {
+    firstName: 'Tom',
+    lastName: 'Cruise',
     actor: true,
-    age: 54 
+    age: 54
 }
 
 const { firstName, age } = person //name: Tom, age: 54
@@ -83,6 +83,18 @@ let monContact = new Contact();
 monContact.nom = "Alexandre";
 
 monContact.afficher();
+
+
+console.warn("Héritage");
+
+class Programmer extends Person {
+    hello() {
+        return super.hello() + ' Je suis un joueur.'
+    }
+}
+
+const toto = new Programmer("Toto");
+console.log(toto.hello());
 
 
 
