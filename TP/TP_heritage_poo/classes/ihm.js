@@ -19,7 +19,7 @@ export class Ihm {
         })
 
 
-        this.formulaire.addEventlistener('submit', (e) => {
+        this.formulaire.addEventListener('submit', (e) => {
             e.preventDefault();
 
             if(this.ajouterArticle().type =="produit"){
@@ -65,7 +65,7 @@ export class Ihm {
     constructionArticle(){
         const titre = document.querySelector("input[name='titre']").value
         const prix = document.querySelector("input[name='prix']").value
-        const description = document.querySelector("input[name='description']").value
+        const description = document.querySelector("textarea[name='description']").value
         return {
             titre : titre,
             prix : prix,
