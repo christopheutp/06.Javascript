@@ -36,12 +36,12 @@ for (let etre of etreVivants) {
     etre.Naissance();
     etre.Respiration();
     etre.Alimentation();
-    etre.Mort();
+  //  etre.Mort();
     console.log("---------------------------")
 
 }
 
 console.log("Battement de coeur de Médor : " + medor.heartRate);
-console.log("Battement de coeur de Cosmos : " + cosmos.photosyntese);
+console.log("Photosynthese de Cosmos : " + cosmos.photosyntese);
 // medor.Mort();
 medor.Aboyer();
