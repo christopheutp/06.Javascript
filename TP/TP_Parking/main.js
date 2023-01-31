@@ -30,6 +30,38 @@ btnEnter.addEventListener('click', () => {
 
 btnPayer.addEventListener('click', () => {
     console.log("clique bouton payer")
+    let duree, prix = 0;
+    //Récuperation du véhicule
+    const vehicule = findCar();
+    //vérification de la présence du véhicule
+    if(vehicule != undefined) {
+        // definir une end date
+        vehicule.endDate = new Date();
+        //calculer la duree
+        duree =(vehicule.endDate - vehicule.startDate) / 60000;
+        //calculer le prix
+        switch(true) {
+            case duree <= 15:
+                prix = 0.8;
+                break;
+            case duree <= 30:
+                prix = 1.3;
+                break;
+            case duree <= 45:
+                prix = 1.7;
+                break;
+            default:
+                prix = 6;
+                break;
+        };
+        //affichage du prix
+        displayBox(messageBox,`Le prix à payer pour le véhicule ${licencePlate.value} est de ${prix}€`,5000);
+    }else {
+        displayBox(alertBox,`Le véhicule ${licencePlate.value} n'est pas présent dans le parking`, 3000)
+    }
+
+    resetInput();
+
 })
 
 function resetInput(){
