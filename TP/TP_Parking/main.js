@@ -22,8 +22,14 @@ btnEnter.addEventListener('click', () => {
             displayBox(alertBox,"Veuillez saisir votre immatriculation",3000)
         }
     }else {
-        displayBox(alertBox, `Le véhicule ${licencePlate.value} est déja présent dans le parking`,3000)
+        if(vehicule.endDate != ''){
+            addtoPark();
+        }else {
+            displayBox(alertBox, `Le véhicule ${licencePlate.value} est déja présent dans le parking`,3000)
+        }
+        
     }
+    console.table(vehicules);
     resetInput();
    
 })
@@ -35,7 +41,8 @@ btnPayer.addEventListener('click', () => {
     const vehicule = findCar();
     //vérification de la présence du véhicule
     if(vehicule != undefined) {
-        // definir une end date
+        if(vehicule.endDate == ''){
+                // definir une end date
         vehicule.endDate = new Date();
         //calculer la duree
         duree =(vehicule.endDate - vehicule.startDate) / 60000;
@@ -56,10 +63,14 @@ btnPayer.addEventListener('click', () => {
         };
         //affichage du prix
         displayBox(messageBox,`Le prix à payer pour le véhicule ${licencePlate.value} est de ${prix}€`,5000);
+        }else {
+            displayBox(alertBox,`Le véhicule ${licencePlate.value} a déja soldé le parking`, 3000)
+        }
+        
     }else {
         displayBox(alertBox,`Le véhicule ${licencePlate.value} n'est pas présent dans le parking`, 3000)
     }
-
+    console.table(vehicules);
     resetInput();
 
 })
