@@ -81,7 +81,10 @@ function resetInput(){
 
 function findCar(){
     //trouver un véhicule en fonction de la plaque
-    return vehicules.find(vehicule => {
+    // return vehicules.find(vehicule => {
+    //     return vehicule.id == licencePlate.value
+    // })
+    return vehicules.findLast(vehicule => {
         return vehicule.id == licencePlate.value
     })
 }
